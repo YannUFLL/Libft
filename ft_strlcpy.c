@@ -6,29 +6,29 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:31:27 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/22 19:01:11 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:47:40 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t	length;
 
+	while (src[length] != '\0')
+		length++;
 	i = 0;
-	while (src[i] != '\0')
-		i++;
-	if (i > size)
-		return (0);
-	i = 0;
-	while ((src[i] != '\0') && (i < size - 1))
+	while ((src[i] != '\0') && (i < dstsize - 1))
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	if (size > 0)
+	if (dstsize > 0)
 		dst[i] = '\0';
-	return (i);
+	return (length);
 }
+/*
 #include <stdio.h>
 #include <string.h>
 int	main()
@@ -45,3 +45,4 @@ int	main()
 	printf("%d", a);
 	printf("\n%d", b);
 }
+*/

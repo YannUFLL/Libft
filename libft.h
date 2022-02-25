@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:14:00 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/23 19:03:02 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:08:41 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void 	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1); // pas trop sur aussi 
 char 	*ft_substr(char const *s, unsigned int start, size_t len); // pas trop sur lol 
 char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlcpy(char *dst, char *src, size_t size);
 
 
 #endif 

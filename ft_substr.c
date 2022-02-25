@@ -6,11 +6,11 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:31:05 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/23 18:42:15 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:35:22 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 	int		i;
@@ -23,7 +23,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		ptr[i] = str[i];
 		i++;
-		len--; 
+		len--;
 	}
 	ptr[i] = 0;
 	return (ptr);

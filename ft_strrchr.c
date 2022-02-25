@@ -6,11 +6,12 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 11:51:32 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/23 12:07:12 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:35:45 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;

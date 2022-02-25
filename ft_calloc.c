@@ -6,25 +6,25 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 17:39:41 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/23 18:42:59 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:58:20 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	char	*ptr;
-	int	i;
+	int		i;
 
 	ptr = malloc(count * size);
-	i = size * count; 
+	i = size * count;
 	if (ptr == 0)
 		return (0);
 	while (i > 0)
 	{
 		(ptr[i - 1]) = 0;
-		i--; 
+		i--;
 	}	
-	return ((void *)ptr); 
+	return ((void *)ptr);
 }
