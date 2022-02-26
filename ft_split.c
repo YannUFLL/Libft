@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 11:46:19 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/25 13:20:31 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/27 00:03:12 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,11 +108,11 @@ char	**ft_split(char const *s1, char c)
 	}
 	return (ptr);
 }
-/*
+
 #include <stdio.h>
 int	main()
 {
-	char a[] = "cbonjourcouicilcfaitcbeauc";
+	char a[] = "cccbonjourcczgeg";
 	char b = 'c';
 	char **ptr; 
 	int	i;
@@ -125,4 +125,3 @@ int	main()
 		ptr++;
 	}
 }
-*/

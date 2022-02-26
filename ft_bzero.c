@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:37:58 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/22 10:43:43 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/26 23:42:04 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	char	*ptr2;
 	size_t	i;
 
-	ptr2 = ptr;
+	ptr2 = s;
 	i = 0;
 	while (i < n)
 		ptr2[i++] = 0;

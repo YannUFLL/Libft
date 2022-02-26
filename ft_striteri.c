@@ -6,25 +6,24 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 20:27:12 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/25 23:49:01 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/26 23:48:32 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int		i;
-	char	*ptr;
 
-	if (s == NULL || f = NULL)
-		return (NULL);
 	i = 0;
-	ptr = malloc(sizeof(char) * strlen(s));
-	while (s[i])
+	if (s != NULL || f != NULL)
 	{
-		ptr = (*f)(i, result[i]);
-		i++;
+		while (*s)
+		{
+			(*f)(i, s);
+			i++;
+			s++;
+		}
 	}
-	return (ptr);
 }
