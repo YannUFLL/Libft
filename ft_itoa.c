@@ -6,14 +6,11 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:23:09 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/25 19:50:18 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/26 15:30:06 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include "libft.h"
 
 int	ft_nbrsize(int n)
 {
