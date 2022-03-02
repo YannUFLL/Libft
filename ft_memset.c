@@ -6,19 +6,19 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:22:40 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/22 10:32:41 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/02 14:54:03 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t count)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*ptr2;
 	size_t	i;
 
-	ptr2 = ptr;
+	ptr2 = b;
 	i = 0;
-	while (i < count)
-		ptr2[i++] = value;
+	while (i < len)
+		ptr2[i++] = c;
 	return (ptr2);
 }

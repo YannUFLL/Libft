@@ -6,24 +6,22 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:52:56 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/22 18:28:49 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/02 14:48:22 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memmove(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-	char	*ptr1;
-	char	*ptr2;
 
-	ptr1 = (char *)dst;
-	ptr2 = (char *)src;
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	if (dst > src)
 	{
 		while (n > 0)
 		{
-			ptr1[n - 1] = ptr2[n - 1];
+			((char *)dst)[n - 1] = ((char *)src)[n - 1];
 			n--;
 		}
 	}
@@ -32,7 +30,7 @@ void	*ft_memmove(void *restrict dst, const void *restrict src, size_t n)
 		i = 0;
 		while (i < n)
 		{
-			ptr1[i] = ptr2[i];
+			((char *)dst)[i] = ((char *)src)[i];
 			i++;
 		}
 	}

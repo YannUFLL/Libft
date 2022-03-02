@@ -6,11 +6,12 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 11:46:19 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/27 00:03:12 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/02 14:49:34 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	**ft_alloc(char const *s1, char c)
 {
@@ -34,7 +35,7 @@ char	**ft_alloc(char const *s1, char c)
 				i++;
 		}
 	}
-	ptr = malloc(sizeof(char *) * size);
+	ptr = malloc(sizeof(char *) * (size + 1));
 	return (ptr);
 }
 
@@ -54,7 +55,7 @@ char	*ft_malloc(char const *s1, int *i, char c)
 	ptr = malloc(sizeof(char) * (size + 1));
 	if (ptr == 0)
 		return (0);
-	ft_strlcpy(ptr, (char *)(&s1[*i]), (size + 1));
+	ft_strlcpy(ptr, (char *)(&s1[*i]), size + 1);
 	*i = u;
 	return (ptr);
 }
@@ -81,6 +82,7 @@ _Bool	ft_cut(char const *s1, char c, char **ptr)
 				i++;
 		}
 	}
+	ptr[count] = 0;
 	return (0);
 }
 
@@ -91,6 +93,7 @@ void	ft_clean(char **ptr)
 	i = 0;
 	while (ptr[i])
 		free(ptr[i++]);
+	free(ptr[i]);
 	free(ptr);
 }
 
@@ -100,6 +103,8 @@ char	**ft_split(char const *s1, char c)
 	_Bool	error;
 
 	ptr = ft_alloc(s1, c);
+	if (ptr == NULL)
+		return (NULL);
 	error = ft_cut(s1, c, ptr);
 	if (error == 1)
 	{
@@ -108,20 +113,25 @@ char	**ft_split(char const *s1, char c)
 	}
 	return (ptr);
 }
-
+/*
 #include <stdio.h>
+#include <fcntl.h>
 int	main()
 {
-	char a[] = "cccbonjourcczgeg";
-	char b = 'c';
-	char **ptr; 
+	char a[] = "    lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+	Sed non risus. Suspendisse";
+	char b = ' ';
+	char **ptr;
+	int	fd;
 	int	i;
 
+	fd = open("test.txt", O_WRONLY);
 	i = 0;
 	ptr = ft_split(a, b);
+
 	while (ptr[i])
 	{
-		printf("\n%s", ptr[i]);
-		ptr++;
+		ft_putendl_fd(ptr[i], fd);
+		i++;
 	}
-}
+}*/

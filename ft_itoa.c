@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 13:23:09 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/26 23:25:11 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:48:33 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,11 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		size++;
 	ptr = malloc(sizeof(char) * (size + 1));
+	if (ptr == NULL)
+		return (NULL);
 	ft_convert(n, (ptr + size));
-	ptr[size + 1] = 0;
+	ptr[size] = 0;
 	if (n < 0)
 		ptr[0] = '-';
 	return (ptr);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%s", ft_itoa(-2147483648));
-}
-*/

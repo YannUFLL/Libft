@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 10:37:58 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/25 19:58:38 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:09:54 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*ptr1;
 	char	*ptr2;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	ptr1 = (char *)dst;
 	ptr2 = (char *)src;
 	i = 0;
@@ -28,3 +30,16 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+int	main()
+{
+	char *a;
+	char *c;
+	a = NULL;
+	//b = 0;
+	c = memcpy(a, "test", 3);
+	//printf("%p", c);
+	//printf("\n%s", c);
+}*/

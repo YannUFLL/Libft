@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 16:41:12 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/28 16:50:33 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/02/28 16:38:33 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	u;
 	size_t	length;
 
+	length = 0;
 	i = 0;
-	i = ft_strlen(dst);
+	while (dst[i] != '\0' && i <= dstsize)
+	{
+		i++;
+		length++;
+	}
 	if (dstsize <= i)
 		return (dstsize + ft_strlen(src));
-	length = i;
 	u = 0;
 	while ((src[u] != '\0') && (i < (dstsize - 1)))
 	{
@@ -59,8 +63,8 @@ int	main()
 	int	c;
 	int d; 
 	
-	d = ft_strlcat(dest, "lorem ipsum dolor sit amet", 5);
-	c = strlcat(dest2, "lorem ipsum dolor sit amet", 5);
+	d = ft_strlcat(dest, "lorem", 15);
+	c = strlcat(dest2, "lorem", 15);
 	printf("\n%s valeur de int %d", dest, d);
 	printf("\n%s valeur de int %d", dest2, c);
 }*/

@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 10:51:39 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/24 11:44:19 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:33:24 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,36 +31,15 @@ char	*ft_strtrim(char const *s1, char const *s2)
 	char	*ptr;
 	size_t	size;
 	size_t	i;
-	size_t	u;
 
 	i = 0;
 	size = ft_strlen(s1);
-	while (ft_check(s1[i], s2) == 1)
+	while (ft_check(s1[i], s2) == 1 && s1[i])
 		i++;
-	while (ft_check(s1[size - 1], s2) == 1)
+	while (size > 0 && ft_check(s1[size - 1], s2) == 1)
 		size--;
-	ptr = malloc(sizeof(char) * ((size - i) + 1));
-	if (ptr == NULL)
-		return (0);
-	u = 0;
-	while (i < size)
-	{
-		ptr[u] = s1[i];
-		i++;
-		u++;
-	}
-	ptr[i] = 0;
+	if (size == 0)
+		i = 0;
+	ptr = ft_substr((char *)&s1[i], 0, (size - i));
 	return (ptr);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char a[] = "       akkkkkk     ";
-	char b[] = " ak";
-	char *ptr; 
-
-	ptr = ft_strtrim(a, b);
-	printf("%s", ptr);
-}
-*/

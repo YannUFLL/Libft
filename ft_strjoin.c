@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:05:25 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/02/23 19:04:41 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:17:25 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -42,8 +42,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 #include <stdio.h>
 int	main()
 {
-	char a[] = "bonjour";
-	char b[] = "aurevoir";
+	char a[] = "";
+	char b[] = "";
 	char *ptr; 
 
 	ptr = ft_strjoin(a, b);
