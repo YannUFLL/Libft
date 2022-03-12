@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 10:51:39 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/01 14:33:24 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/11 23:10:22 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *s2)
 	size_t	size;
 	size_t	i;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	i = 0;
 	size = ft_strlen(s1);
 	while (ft_check(s1[i], s2) == 1 && s1[i])

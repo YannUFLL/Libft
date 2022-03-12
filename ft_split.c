@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 11:46:19 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/02 14:49:34 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/11 23:22:17 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ char	**ft_split(char const *s1, char c)
 	char	**ptr;
 	_Bool	error;
 
+	if (!s1)
+		return (NULL);
 	ptr = ft_alloc(s1, c);
 	if (ptr == NULL)
 		return (NULL);

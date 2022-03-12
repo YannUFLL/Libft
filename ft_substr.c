@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:31:05 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/02 14:46:40 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/11 23:17:13 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	alloc_size;
 
 	alloc_size = ft_strlen(&s[start]);
+	if (s == NULL)
+		return (NULL);
 	if (len < alloc_size)
 		ptr = malloc(sizeof(char) * (len + 1));
 	else
@@ -31,10 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[i])
 	{
 		if (i >= start && j < len)
-		{
-			ptr[j] = s[i];
-			j++;
-		}
+			ptr[j++] = s[i];
 		i++;
 	}
 	ptr[j] = 0;

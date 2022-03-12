@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ydumaine <ydumaine@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 15:17:53 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/11 23:12:07 by ydumaine         ###   ########.fr       */
+/*   Created: 2022/03/03 10:45:22 by ydumaine          #+#    #+#             */
+/*   Updated: 2022/03/07 11:16:32 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	t_list	*ptr;
+
+	ptr = malloc(sizeof(t_list));
+	if (ptr == NULL)
+		return (NULL);
+	ptr->content = content;
+	ptr->next = NULL;
+	return (ptr);
 }
