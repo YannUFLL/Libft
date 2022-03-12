@@ -6,7 +6,7 @@
 /*   By: ydumaine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:31:05 by ydumaine          #+#    #+#             */
-/*   Updated: 2022/03/11 23:17:13 by ydumaine         ###   ########.fr       */
+/*   Updated: 2022/03/12 18:31:09 by ydumaine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		ptr = malloc(sizeof(char) * (alloc_size + 1));
 	if (ptr == NULL)
-		return (0);
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[i])
